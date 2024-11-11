@@ -43,6 +43,7 @@ Future<dynamic> initialize(Initialize initialize) async {
 
     return await onNext(req, res, client);
   } catch (e, st) {
+    log('$e, ooo $st');
     return onError(e, st);
   }
 }

@@ -110,6 +110,7 @@ class Appwrouter {
 
   /// A function to match the route
   RouteMatchHandler? matchRoute({
+    required dynamic log,
     required String version,
     required MethodType method,
     required String path,
@@ -118,6 +119,7 @@ class Appwrouter {
     if (versionRoutes == null) return null;
 
     for (final MapEntry(:key, :value) in versionRoutes.routes.entries) {
+      log('matching by path: $key');
       if (value.methods[method] != null) {
         final routePattern = key
             .split('/')
@@ -193,6 +195,7 @@ class Appwrouter {
     final path = '/${pathSegments.sublist(2).join('/')}';
 
     final matchedRoute = matchRoute(
+      log: log,
       version: version,
       method: method,
       path: path,

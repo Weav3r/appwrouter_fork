@@ -5,7 +5,7 @@
 /// {@endtemplate}
 class AppwrouterRequest {
   /// {@macro appwrouter_request}
-  const AppwrouterRequest({
+  AppwrouterRequest({
     required this.bodyText,
     required this.bodyJson,
     required this.headers,
@@ -62,7 +62,7 @@ class AppwrouterRequest {
   final int port;
 
   /// The path of the request.
-  final String path;
+  String path;
 
   /// The query string of the request.
   final String queryString;

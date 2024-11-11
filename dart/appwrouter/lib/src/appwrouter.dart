@@ -118,8 +118,8 @@ class Appwrouter {
     final versionRoutes = versions[version];
     if (versionRoutes == null) return null;
 
-    for (var vl in versionRoutes.routes.keys) {
-      log('matching by path: $vl');
+    for (final MapEntry(:key, :value) in versionRoutes.routes.entries) {
+      log('matching by path: $key and method: ${value.methods.keys.toList()}');
     }
     for (final MapEntry(:key, :value) in versionRoutes.routes.entries) {
       if (value.methods[method] != null) {

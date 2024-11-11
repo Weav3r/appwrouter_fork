@@ -24,7 +24,7 @@ class AppwrouterRequest {
   factory AppwrouterRequest.parse(dynamic req) {
     return AppwrouterRequest(
       bodyText: req.bodyRaw as String,
-      bodyJson: req.body,
+      bodyJson: req.bodyJson as Map<String, dynamic>,
       headers: req.headers as Map<String, dynamic>,
       scheme: req.scheme as dynamic,
       method: req.method as String,
@@ -41,7 +41,7 @@ class AppwrouterRequest {
   final String bodyText;
 
   /// The body of the request as Map.
-  final dynamic bodyJson;
+  final Map<String, dynamic> bodyJson;
 
   /// The headers of the request.
   final Map<String, dynamic> headers;
@@ -76,7 +76,7 @@ class AppwrouterRequest {
   /// Copy with
   AppwrouterRequest copyWith({
     String? bodyText,
-    dynamic bodyJson,
+    Map<String, dynamic>? bodyJson,
     Map<String, dynamic>? headers,
     dynamic scheme,
     String? method,

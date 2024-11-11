@@ -6,8 +6,8 @@
 class AppwrouterRequest {
   /// {@macro appwrouter_request}
   const AppwrouterRequest({
-    required this.bodyRaw,
-    required this.body,
+    required this.bodyText,
+    required this.bodyJson,
     required this.headers,
     required this.scheme,
     required this.method,
@@ -23,8 +23,8 @@ class AppwrouterRequest {
   /// Parsing the Request from Appwrite,
   factory AppwrouterRequest.parse(dynamic req) {
     return AppwrouterRequest(
-      bodyRaw: req.bodyRaw as String,
-      body: req.body,
+      bodyText: req.bodyRaw as String,
+      bodyJson: req.body,
       headers: req.headers as Map<String, dynamic>,
       scheme: req.scheme as dynamic,
       method: req.method as String,
@@ -37,11 +37,11 @@ class AppwrouterRequest {
     );
   }
 
-  /// The raw body of the request.
-  final String bodyRaw;
+  /// The raw body of the request as String.
+  final String bodyText;
 
-  /// The body of the request.
-  final dynamic body;
+  /// The body of the request as Map.
+  final dynamic bodyJson;
 
   /// The headers of the request.
   final Map<String, dynamic> headers;
@@ -75,8 +75,8 @@ class AppwrouterRequest {
 
   /// Copy with
   AppwrouterRequest copyWith({
-    String? bodyRaw,
-    dynamic body,
+    String? bodyText,
+    dynamic bodyJson,
     Map<String, dynamic>? headers,
     dynamic scheme,
     String? method,
@@ -89,8 +89,8 @@ class AppwrouterRequest {
     Map<String, dynamic>? params,
   }) {
     return AppwrouterRequest(
-      bodyRaw: bodyRaw ?? this.bodyRaw,
-      body: body ?? this.body,
+      bodyText: bodyText ?? this.bodyText,
+      bodyJson: bodyJson ?? this.bodyJson,
       headers: headers ?? this.headers,
       scheme: scheme ?? this.scheme,
       method: method ?? this.method,

@@ -14,7 +14,7 @@ Future<dynamic> withParamsHandler(HandleRequest handler) async {
     final params = req.params;
     log("Hi Appwriters, this is a log message");
     log(params.toString());
-    return res.send(
+    return res.text(
         jsonEncode({
           "message": "Hello from Appwrouter!",
           "data": {
@@ -29,7 +29,7 @@ Future<dynamic> withParamsHandler(HandleRequest handler) async {
   } catch (e) {
     error(e.toString());
     if (e is AppwriteException) {
-      return res.send(
+      return res.text(
           jsonEncode({
             "message": e.message,
           }),
@@ -38,7 +38,7 @@ Future<dynamic> withParamsHandler(HandleRequest handler) async {
             "content-type": "application/json",
           });
     } else {
-      return res.send(
+      return res.text(
           jsonEncode({
             "message": "Internal Server Error",
           }),

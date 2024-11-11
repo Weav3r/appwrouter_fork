@@ -24,7 +24,7 @@ Future<dynamic> initialize(Initialize initialize) async {
     if (triggeredType == TriggeredType.event) {
       fullEventType = req.headers['x-appwrite-event'] as String;
       eventType = EventType.fromCode(fullEventType);
-      eventMap = req.body as Map<String, dynamic>;
+      eventMap = req.bodyJson as Map<String, dynamic>;
     }
 
     final client = await onMiddleware(

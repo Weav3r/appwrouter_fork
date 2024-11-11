@@ -176,7 +176,7 @@ class Appwrouter {
     final pathSegments = pathRequest.split('/');
     if (pathSegments.length < 2) {
       error('Bad request');
-      return res.send(
+      return res.text(
           jsonEncode(
             {'message': 'Bad request'},
           ),
@@ -200,7 +200,7 @@ class Appwrouter {
 
     if (matchedRoute == null) {
       error('No route found for $path with method $method');
-      return res.send(
+      return res.text(
           jsonEncode(
             {
               'message':
@@ -230,7 +230,7 @@ class Appwrouter {
       );
     } catch (e) {
       error('Error while handling request: $e');
-      return res.send(
+      return res.text(
           jsonEncode(
             {
               'message': 'Internal server error',

@@ -9,7 +9,8 @@ class AppwrouterResponse {
     required this.empty,
     required this.json,
     required this.redirect,
-    required this.send,
+    required this.text,
+    required this.binary,
   });
 
   /// Parsing the Response from Appwrite,
@@ -18,7 +19,8 @@ class AppwrouterResponse {
       empty: res.empty,
       json: res.json,
       redirect: res.redirect,
-      send: res.send,
+      text: res.text,
+      binary: res.binary,
     );
   }
 
@@ -31,21 +33,26 @@ class AppwrouterResponse {
   /// The redirect response.
   final dynamic redirect;
 
-  /// The send response.
-  final dynamic send;
+  /// The text response.
+  final dynamic text;
+
+  /// The binary response.
+  final dynamic binary;
 
   /// Copy with
   AppwrouterResponse copyWith({
     dynamic empty,
     dynamic json,
     dynamic redirect,
-    dynamic send,
+    dynamic text,
+    dynamic binary,
   }) {
     return AppwrouterResponse(
       empty: empty ?? this.empty,
       json: json ?? this.json,
       redirect: redirect ?? this.redirect,
-      send: send ?? this.send,
+      text: text ?? this.text,
+      binary: binary ?? this.binary,
     );
   }
 }

@@ -1,12 +1,12 @@
 name: appwrouter
 description: A router for appwrite cloud functions
-version: 0.2.7
+version: 0.2.8
 license: MIT
 homepage: https://github.com/moshOntong-IT/appwrouter/dart/appwrouter
 repository: https://github.com/moshOntong-IT/appwrouter/dart/appwrouter
 issue_tracker: https://github.com/moshOntong-IT/appwrouter/issues
 environment:
-  sdk: "^3.0.0"
+  sdk: "^3.5.0"
 
 platforms:
   android:
@@ -17,9 +17,9 @@ platforms:
   windows:
 
 dependencies:
-  dart_appwrite: ^11.0.1
+  dart_appwrite: ^12.1.0
 
 dev_dependencies:
   mocktail: ^1.0.3
   test: ^1.25.2
-  very_good_analysis: ^5.1.0
+  very_good_analysis: ^6.0.0

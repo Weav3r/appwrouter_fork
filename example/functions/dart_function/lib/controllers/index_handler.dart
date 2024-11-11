@@ -11,7 +11,7 @@ Future<dynamic> indexHandler(HandleRequest handler) async {
   ) = handler;
   try {
     log("Hi Appwriters, this is a log message");
-    return res.send(
+    return res.text(
         jsonEncode({
           "message": "Hello from Appwrouter!",
         }),
@@ -22,7 +22,7 @@ Future<dynamic> indexHandler(HandleRequest handler) async {
   } catch (e) {
     error(e.toString());
     if (e is AppwriteException) {
-      return res.send(
+      return res.text(
           jsonEncode({
             "message": e.message,
           }),
@@ -31,7 +31,7 @@ Future<dynamic> indexHandler(HandleRequest handler) async {
             "content-type": "application/json",
           });
     } else {
-      return res.send(
+      return res.text(
           jsonEncode({
             "message": "Internal Server Error",
           }),

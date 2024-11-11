@@ -119,9 +119,10 @@ class Appwrouter {
     if (versionRoutes == null) return null;
 
     for (final MapEntry(:key, :value) in versionRoutes.routes.entries) {
-      log('matching by path: $key and method: ${value.methods.keys.toList()}');
+      log('Listing versionRoutes by path: $key and method: ${value.methods.keys.toList()}');
     }
     for (final MapEntry(:key, :value) in versionRoutes.routes.entries) {
+      log('The if condition:  ${value.methods[method]}');
       if (value.methods[method] != null) {
         final routePattern = key
             .split('/')
@@ -152,6 +153,7 @@ class Appwrouter {
         if (isMatch) {
           final handler = value.methods[method];
 
+          log('isMatch handler not null:  ${handler != null}');
           if (handler != null) {
             return RouteMatchHandler(
               params: params,

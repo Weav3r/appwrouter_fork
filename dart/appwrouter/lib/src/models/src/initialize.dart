@@ -87,5 +87,5 @@ class Initialize {
   ) onNext;
 
   /// An error function
-  final Future<void> Function(dynamic) onError;
+  final Future<void> Function(dynamic, dynamic) onError;
 }

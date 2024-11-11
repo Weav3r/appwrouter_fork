@@ -81,8 +81,8 @@ Future<dynamic> main(final context) async {
             ),
           );
         },
-        onError: (e) {
-          context.error(e.toString());
+        onError: (e, st) {
+          context.error('$e, $st');
           return context.res.text(
             jsonEncode({
               "message": "Internal Server Error",

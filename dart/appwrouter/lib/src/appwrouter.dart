@@ -138,7 +138,8 @@ class Appwrouter {
             .toList();
 
         log('Inside the if methods, routePattern: $routePattern, and pathSegments: $pathSegments');
-        if (routePattern.length != pathSegments.length) return null;
+        // if (routePattern.length != pathSegments.length) return null;
+        if (routePattern.length != pathSegments.length) continue;
 
         final params = <String, dynamic>{};
         var isMatch = true;

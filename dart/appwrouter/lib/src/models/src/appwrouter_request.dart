@@ -50,7 +50,7 @@ class AppwrouterRequest {
   final dynamic scheme;
 
   /// The method of the request.
-  final String method;
+  String method;
 
   /// The url of the request.
   final String url;

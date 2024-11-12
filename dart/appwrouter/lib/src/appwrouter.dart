@@ -122,7 +122,7 @@ class Appwrouter {
       log('Listing versionRoutes by path: $key and method: ${value.methods.keys.toList()}');
     }
     for (final MapEntry(:key, :value) in versionRoutes.routes.entries) {
-      log('The if condition:  ${value.methods[method]}');
+      log('B4 the if condition:  ${key}');
       if (value.methods[method] != null) {
         final routePattern = key
             .split('/')
@@ -137,6 +137,7 @@ class Appwrouter {
             )
             .toList();
 
+        log('Inside the if methods, routePattern: $routePattern, and pathSegments: $pathSegments');
         if (routePattern.length != pathSegments.length) return null;
 
         final params = <String, dynamic>{};

@@ -16,7 +16,7 @@ dependencies:
       url: "https://github.com/Weav3r/appwrouter_fork.git"
       ref: dartv33
       path: dart/appwrouter
-      version: "0.2.21"
+      version: "0.2.22"
   dart_appwrite: 12.1.0
 
 dev_dependencies:

@@ -20,7 +20,7 @@
     {
       "$id": "6610c229c5e5045f076b",
       "name": "dart_function",
-      "runtime": "dart-3.1",
+      "runtime": "dart-3.3",
       "execute": ["any"],
       "events": [],
       "schedule": "",

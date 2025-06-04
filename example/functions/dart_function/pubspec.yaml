@@ -1,14 +1,22 @@
 name: starter_template
 version: 1.0.0
+publish_to: none
 
 environment:
   sdk: ^3.0.0
 
 dependencies:
   # appwrouter: ^0.2.4
+  # appwrouter:
+  #   path: ../../../dart/appwrouter
+  # dart_appwrite: 11.0.1
   appwrouter:
-    path: ../../../dart/appwrouter
-  dart_appwrite: 11.0.1
+    # path: "/home/ernest/Projects/github/appwrouter/dart/appwrouter"
+    git:
+      url: "https://github.com/Weav3r/appwrouter_fork.git"
+      ref: dartv33
+      path: dart/appwrouter
+  dart_appwrite: 12.1.0
 
 dev_dependencies:
   lints: ^2.0.0
